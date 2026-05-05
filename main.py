@@ -74,7 +74,7 @@ todos_dados = []
 ids_coletados_total = set() 
 
 for inicio, fim, rotulo in decadas:
-    print(f"\n📅 Processando {rotulo} ({inicio}-{fim})...")
+    print(f" Processando {rotulo} ({inicio}-{fim})...")
     
     for genero in generos:
         
@@ -98,7 +98,7 @@ for inicio, fim, rotulo in decadas:
 
         time.sleep(0.5) 
 
-print(f"\n\n Total bruto coletado: {len(todos_dados)}")
+print(f"\n\n Total coletado: {len(todos_dados)}")
 
 if todos_dados:
     df = pd.DataFrame(todos_dados)
@@ -107,6 +107,6 @@ if todos_dados:
     
     print(f"Salvando {len(df)} artistas únicos no Banco de Dados...")
     df.to_sql('artistas_detalhados', engine, if_exists='replace', index=False)
-    print("SUCESSO!.")
+    print("Finalizado")
 else:
     print("Nenhum dado encontrado.")
